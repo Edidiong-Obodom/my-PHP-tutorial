@@ -9,8 +9,21 @@
 
 <body>
     <form action="index.php" method="post">
-        <input type="submit" name="stop" value="stop" />
+        <button type="submit" name="stop"> Stop </button>
     </form>
 </body>
 
 </html>
+<?php
+ $seconds = 0;
+ $running = true;
+
+ while ($running) {
+    if (isset($_POST["stop"])) {
+        $running = false;
+    } else {
+        // wait 1 second
+        $seconds++;
+        echo $seconds . "<br>";
+    }
+ }
